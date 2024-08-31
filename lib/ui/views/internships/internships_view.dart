@@ -34,6 +34,7 @@ class InternshipsView extends StackedView<InternshipsViewModel>
   @override
   void onDispose(InternshipsViewModel viewModel) {
     disposeForm();
+    viewModel.filterStateModel.reset();
     super.onDispose(viewModel);
   }
 
@@ -233,4 +234,6 @@ class InternshipsView extends StackedView<InternshipsViewModel>
       throw Exception("Unsupported Data item passed");
     }
   }
+
+
 }
