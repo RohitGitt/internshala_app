@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:internshala/ui/common/app_colors.dart';
 import 'package:internshala/ui/common/ui_helpers.dart';
-import 'package:internshala/ui/components/dump_ui.dart';
-import 'package:internshala/ui/components/primary_widgets.dart';
+import 'package:internshala/core/components/dump_ui.dart';
+import 'package:internshala/core/components/primary_widgets.dart';
 import 'package:internshala/ui/views/multi_checkbox_filter/components/multi_checkbox_filter_appbar.dart';
 import 'package:internshala/ui/views/multi_checkbox_filter/multi_checkbox_filter_view.form.dart';
 import 'package:internshala/utility/enum_utils.dart';

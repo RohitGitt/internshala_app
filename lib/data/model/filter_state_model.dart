@@ -1,8 +1,8 @@
 import 'package:internshala/app/app.locator.dart';
 import 'package:internshala/services/EasyLoader/easy_loader.service.dart';
-import 'package:internshala/ui/views/filter/model/check_box_model.dart';
-import 'package:internshala/ui/views/filter/model/filter.dart';
-import 'package:internshala/ui/views/filter/model/monthly_stipend_model.dart';
+import 'package:internshala/data/model/check_box_model.dart';
+import 'package:internshala/data/model/filter.dart';
+import 'package:internshala/data/model/monthly_stipend_model.dart';
 import 'package:internshala/ui/views/internships/model/Internship.dart';
 import 'package:internshala/utility/data_utils.dart';
 import 'package:internshala/utility/helper_utils.dart';

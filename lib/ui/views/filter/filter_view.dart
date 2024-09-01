@@ -3,9 +3,9 @@ import 'package:internshala/gen/assets.gen.dart';
 import 'package:internshala/ui/common/app_colors.dart';
 import 'package:internshala/ui/common/app_strings.dart';
 import 'package:internshala/ui/common/ui_helpers.dart';
-import 'package:internshala/ui/components/custom_app_bar.dart';
-import 'package:internshala/ui/components/dump_ui.dart';
-import 'package:internshala/ui/components/primary_widgets.dart';
+import 'package:internshala/core/components/custom_app_bar.dart';
+import 'package:internshala/core/components/dump_ui.dart';
+import 'package:internshala/core/components/primary_widgets.dart';
 import 'package:internshala/utility/helper_utils.dart';
 import 'package:stacked/stacked.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -15,11 +15,6 @@ class FilterView extends StackedView<FilterViewModel> {
   const FilterView({
     Key? key,
   }) : super(key: key);
-
-  @override
-  void onViewModelReady(FilterViewModel viewModel) {
-    super.onViewModelReady(viewModel);
-  }
 
   @override
   Widget builder(

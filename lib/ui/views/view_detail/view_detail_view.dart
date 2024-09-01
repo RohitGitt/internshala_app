@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:internshala/ui/common/app_strings.dart';
-import 'package:internshala/ui/components/build_text_ui.dart';
-import 'package:internshala/ui/components/custom_app_bar.dart';
+import 'package:internshala/core/components/build_text_ui.dart';
+import 'package:internshala/core/components/custom_app_bar.dart';
 import 'package:stacked/stacked.dart';
 
 import 'view_detail_viewmodel.dart';

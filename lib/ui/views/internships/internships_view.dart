@@ -5,10 +5,10 @@ import 'package:internshala/services/EasyLoader/easy_loader.service.dart';
 import 'package:internshala/ui/common/app_colors.dart';
 import 'package:internshala/ui/common/app_strings.dart';
 import 'package:internshala/ui/common/ui_helpers.dart';
-import 'package:internshala/ui/components/build_job_info_item_ui.dart';
-import 'package:internshala/ui/components/build_text_ui.dart';
-import 'package:internshala/ui/components/custom_app_bar.dart';
-import 'package:internshala/ui/components/dump_ui.dart';
+import 'package:internshala/core/components/build_job_info_item_ui.dart';
+import 'package:internshala/core/components/build_text_ui.dart';
+import 'package:internshala/core/components/custom_app_bar.dart';
+import 'package:internshala/core/components/dump_ui.dart';
 import 'package:internshala/ui/views/internships/components/search_appbar.dart';
 import 'package:internshala/ui/views/internships/internships_view.form.dart';
 import 'package:internshala/ui/views/internships/model/Internship.dart';
@@ -203,7 +203,7 @@ class InternshipsView extends StackedView<InternshipsViewModel>
               "Activily Hiring", // here correct field need to bind
           companyLogoPath: InternshipsViewConsts
               .ksDummyImageUrl, //  here correct field need to bind
-          location: data?.locationNames?.join(", ") ?? "N/A",
+          location: data?.locationNames?.join(", ").isEmpty == true ? "N/A" : data?.locationNames?.join(", "),
           startDate: data?.startDate,
           duration: data?.duration,
           currency: data?.stipend?.currency,

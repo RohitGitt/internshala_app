@@ -4,7 +4,7 @@ import 'package:internshala/gen/assets.gen.dart';
 import 'package:internshala/ui/common/app_colors.dart';
 import 'package:internshala/ui/common/ui_helpers.dart';
 import 'package:internshala/ui/views/courses/courses_view.dart';
-import 'package:internshala/ui/views/filter/model/filter_state_model.dart';
+import 'package:internshala/data/model/filter_state_model.dart';
 import 'package:internshala/ui/views/home/home_view.dart';
 import 'package:internshala/ui/views/internships/internships_view.dart';
 import 'package:internshala/ui/views/jobs/jobs_view.dart';

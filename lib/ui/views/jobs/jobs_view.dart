@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:internshala/ui/common/app_strings.dart';
-import 'package:internshala/ui/components/build_text_ui.dart';
-import 'package:internshala/ui/components/custom_app_bar.dart';
+import 'package:internshala/core/components/build_text_ui.dart';
+import 'package:internshala/core/components/custom_app_bar.dart';
 import 'package:stacked/stacked.dart';
 
 import 'jobs_viewmodel.dart';
@@ -25,7 +25,7 @@ class JobsView extends StackedView<JobsViewModel> {
         ),
         body: Align(
           alignment: Alignment.center,
-          child: buildTextUI(text: "Jobs Screen"),
+          child: buildTextUI(text: "Jobs Screen" ,fontSize: 20, bold: true),
         ),
       ),
     );

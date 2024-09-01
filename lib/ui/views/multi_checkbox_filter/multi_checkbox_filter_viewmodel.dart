@@ -1,6 +1,6 @@
 import 'package:internshala/app/app.locator.dart';
-import 'package:internshala/ui/views/filter/model/check_box_model.dart';
-import 'package:internshala/ui/views/filter/model/filter_state_model.dart';
+import 'package:internshala/data/model/check_box_model.dart';
+import 'package:internshala/data/model/filter_state_model.dart';
 import 'package:internshala/ui/views/multi_checkbox_filter/multi_checkbox_filter_view.form.dart';
 import 'package:internshala/utility/enum_utils.dart';
 import 'package:stacked/stacked.dart';

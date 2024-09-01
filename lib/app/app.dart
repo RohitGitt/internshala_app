@@ -4,7 +4,7 @@ import 'package:internshala/services/date_picker/date_picker_service.dart';
 import 'package:internshala/ui/bottom_sheets/notice/notice_sheet.dart';
 import 'package:internshala/ui/dialogs/info_alert/info_alert_dialog.dart';
 import 'package:internshala/ui/dialogs/select_max_duration/select_max_duration_dialog_view.dart';
-import 'package:internshala/ui/views/filter/model/filter_state_model.dart';
+import 'package:internshala/data/model/filter_state_model.dart';
 import 'package:internshala/ui/views/home/home_view.dart';
 import 'package:internshala/ui/views/startup/startup_view.dart';
 import 'package:stacked/stacked_annotations.dart';

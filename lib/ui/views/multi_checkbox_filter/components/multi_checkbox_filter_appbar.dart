@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:internshala/gen/assets.gen.dart';
 import 'package:internshala/ui/common/app_colors.dart';
 import 'package:internshala/ui/common/ui_helpers.dart';
-import 'package:internshala/ui/components/build_text_ui.dart';
-import 'package:internshala/ui/components/primary_widgets.dart';
+import 'package:internshala/core/components/build_text_ui.dart';
+import 'package:internshala/core/components/primary_widgets.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class MultiCheckBoxFilterAppBar extends StatelessWidget

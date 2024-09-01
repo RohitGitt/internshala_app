@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:internshala/ui/common/app_colors.dart';
-import 'package:internshala/ui/components/build_text_ui.dart';
+import 'package:internshala/core/components/build_text_ui.dart';
 
 Widget primaryButton({
   String? name,

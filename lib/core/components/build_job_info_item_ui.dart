@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:internshala/gen/assets.gen.dart';
 import 'package:internshala/ui/common/ui_helpers.dart';
-import 'package:internshala/ui/components/build_text_ui.dart';
-import 'package:internshala/ui/components/dump_ui.dart';
+import 'package:internshala/core/components/build_text_ui.dart';
+import 'package:internshala/core/components/dump_ui.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 Widget buildJobInfoItemUI({

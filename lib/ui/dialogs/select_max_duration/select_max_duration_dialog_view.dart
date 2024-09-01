@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:internshala/app/app.locator.dart';
 import 'package:internshala/services/EasyLoader/easy_loader.service.dart';
 import 'package:internshala/ui/common/app_colors.dart';
-import 'package:internshala/ui/components/build_text_ui.dart';
+import 'package:internshala/core/components/build_text_ui.dart';
 import 'package:internshala/ui/dialogs/select_max_duration/select_max_duration_dialog_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -58,10 +58,13 @@ Widget buildSelectMaximumDurationInMonthsUI(
               },
               child: Container(
                   height: 60,
-                  padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                   width: double.infinity,
                   color: kcWhite,
-                  child: Text(item.toString(),))))
+                  child: Text(
+                    item.toString(),
+                  ))))
           .toList(),
     ),
   );

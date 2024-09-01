@@ -14,7 +14,7 @@ import 'package:stacked_shared/stacked_shared.dart';
 import '../services/EasyLoader/easy_loader.service.dart';
 import '../services/api/internship/internship_api.service.dart';
 import '../services/date_picker/date_picker_service.dart';
-import '../ui/views/filter/model/filter_state_model.dart';
+import '../data/model/filter_state_model.dart';
 
 final locator = StackedLocator.instance;
 

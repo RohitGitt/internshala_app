@@ -1,6 +1,6 @@
 
-import 'package:internshala/ui/views/filter/model/check_box_model.dart';
-import 'package:internshala/ui/views/filter/model/monthly_stipend_model.dart';
+import 'package:internshala/data/model/check_box_model.dart';
+import 'package:internshala/data/model/monthly_stipend_model.dart';
 
 abstract class Filter {
   int id = 0;

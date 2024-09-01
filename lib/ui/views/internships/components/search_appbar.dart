@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:internshala/gen/assets.gen.dart';
 import 'package:internshala/ui/common/app_colors.dart';
 import 'package:internshala/ui/common/ui_helpers.dart';
-import 'package:internshala/ui/components/primary_widgets.dart';
+import 'package:internshala/core/components/primary_widgets.dart';
 
 class SearchAppBar extends StatelessWidget {
 
