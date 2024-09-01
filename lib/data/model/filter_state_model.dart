@@ -210,6 +210,9 @@ class FilterStateModel {
 
     if (doItemExist == null) {
       addFilter(StartingFromDateOrAfterFilter(filter: date));
+    }else{
+      removeFilter(doItemExist);
+      addFilter(StartingFromDateOrAfterFilter(filter: date));
     }
   }
 
@@ -218,6 +221,9 @@ class FilterStateModel {
     final doItemExist = getFilterItemByFilterItemIdOrNull(
         MaxDurationInMonthsFilter(maxDurationInMonths: value));
     if (doItemExist == null) {
+      addFilter(MaxDurationInMonthsFilter(maxDurationInMonths: value));
+    }else{
+      removeFilter(doItemExist);
       addFilter(MaxDurationInMonthsFilter(maxDurationInMonths: value));
     }
   }
@@ -663,10 +669,10 @@ class FilterStateModel {
     if (duration == null) {
       return false;
     }
-    if (condition < duration) {
-      return false;
-    }else{
+    if (duration <= condition ) {
       return true;
+    }else{
+      return false;
     }
   }
 
