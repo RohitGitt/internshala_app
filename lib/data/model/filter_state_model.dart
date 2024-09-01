@@ -641,7 +641,7 @@ class FilterStateModel {
     if(stipend == null){
       return true;
     }
-    if(stipend > conditions){
+    if(stipend >= conditions){
         return true;
     }
       return false;
