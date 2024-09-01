@@ -699,8 +699,10 @@ class FilterStateModel {
     if (dateString == null) {
       return false;
     }
-
-    if ((stringToDateTime(dateString).isBefore(conditon))) {
+    final DateTime? internshipStartDate = stringToDateTime(dateString);
+    if(internshipStartDate == null ) { return false;}
+    
+    if (internshipStartDate.isBefore(conditon)) {
       return false;
     } else {
       return true;

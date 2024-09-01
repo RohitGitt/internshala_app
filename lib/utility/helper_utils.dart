@@ -60,8 +60,12 @@ int? convertToInt(String? formattedString) {
   return int.parse(formattedString.replaceAll(',', ''));
 }
 
-DateTime stringToDateTime(String dateString) {
-  return DateTime.parse(dateString);
+DateTime? stringToDateTime(String dateString) {
+  try{
+    return DateTime.parse(dateString);
+  }catch(err){
+    return null;
+  }
 }
 
 String? dateTimeToString(DateTime? dateTime) {
