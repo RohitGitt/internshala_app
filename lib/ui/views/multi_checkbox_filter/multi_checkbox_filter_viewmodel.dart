@@ -12,9 +12,10 @@ class MultiCheckboxFilterViewModel extends FormViewModel {
   final _navigationService = locator<NavigationService>();
 
   late ScreenType screenType;
-
+  bool shouldRefreshFilterState = true;
   List<CheckBoxModel> _allData = [];
   List<CheckBoxModel>? get filterData => getFilterData();
+
 
 
   List<CheckBoxModel> get dataList =>
@@ -111,11 +112,12 @@ class MultiCheckboxFilterViewModel extends FormViewModel {
     switch(screenType){
       case ScreenType.PROFILES_FILTER: locator<FilterStateModel>().resetProfile(); break;
       case ScreenType.CITIES_FILTER: locator<FilterStateModel>().resetCities(); break;
-      default: break;
+      default: throw Exception("UpSupported Screen Type.");
     }
   }
 
   void onApplyButtonClick(){
+    shouldRefreshFilterState = false;
     _navigationService.back();
   }
 

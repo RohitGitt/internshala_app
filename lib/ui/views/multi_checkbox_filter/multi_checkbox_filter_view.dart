@@ -38,76 +38,85 @@ class MultiCheckboxFilterView extends StackedView<MultiCheckboxFilterViewModel>
     MultiCheckboxFilterViewModel viewModel,
     Widget? child,
   ) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Theme.of(context).colorScheme.background,
-        appBar: MultiCheckBoxFilterAppBar(
-          title: appBarTitle ?? "",
-          showBackButton: true,
-          onBackButtonClick: () {
-            viewModel.onBackButtonClick();
-          },
-          onClearAllClick: () {
-            viewModel.onClearAllButtonClick();
-          },
-          onApplyClick: () {
-            viewModel.onApplyButtonClick();
-          },
-        ),
-        body: Container(
-          height: double.infinity,
-          width: double.infinity,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.symmetric(
-                    horizontal: primaryHorizontalScreenPadding, vertical: primaryPadding),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Container(
-                      height: 50,
-                      child: primaryTextField(
-                        label: "Search $appBarTitle",
-                        controller: searchController,
-                        focusNode: searchFocusNode,
-                        labelColor: kcBlue,
-                        onChanged: (newValue) {
-                          viewModel.filter(newValue);
-                          viewModel.refreshUI();
-                        },
-                      ),
-                    ),
-                    if (viewModel.filterData?.isNotEmpty ?? false) vSpace(10),
-                    if (viewModel.filterData?.isNotEmpty ?? false)
-                    buildRowFilterItemUI(data: viewModel.filterData! , 
-                    onDismissTap: (item) {
-                       viewModel.onDismissFilterItemHandler(
-                                    dismissItem: item);
-                    },
-                    )
-                  ],
-                ),
-              ),
-              Expanded(
-                  flex: 1,
-                  child: ListView.builder(
-                    itemCount: viewModel.dataList.length,
-                    itemBuilder: (context, index) {
-                      final data = viewModel.dataList[index];
-                      return buildCheckBox(
-                          label: data.fieldName,
-                          value: data.isChecked,
-                          onTap: () {
-                            viewModel.onItemClickHandler(
-                                isChecked: !data.isChecked, item: data);
+    return PopScope(
+      onPopInvoked: (didPop) {
+        if(didPop){
+          if(viewModel.shouldRefreshFilterState){
+            viewModel.reset();
+          }
+        }
+      },
+      child: SafeArea(
+        child: Scaffold(
+          backgroundColor: Theme.of(context).colorScheme.background,
+          appBar: MultiCheckBoxFilterAppBar(
+            title: appBarTitle ?? "",
+            showBackButton: true,
+            onBackButtonClick: () {
+              viewModel.onBackButtonClick();
+            },
+            onClearAllClick: () {
+              viewModel.onClearAllButtonClick();
+            },
+            onApplyClick: () {
+              viewModel.onApplyButtonClick();
+            },
+          ),
+          body: Container(
+            height: double.infinity,
+            width: double.infinity,
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: primaryHorizontalScreenPadding, vertical: primaryPadding),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        height: 50,
+                        child: primaryTextField(
+                          label: "Search $appBarTitle",
+                          controller: searchController,
+                          focusNode: searchFocusNode,
+                          labelColor: kcBlue,
+                          onChanged: (newValue) {
+                            viewModel.filter(newValue);
+                            viewModel.refreshUI();
                           },
-                          midPad: 0);
-                    },
-                  )),
-            ],
+                        ),
+                      ),
+                      if (viewModel.filterData?.isNotEmpty ?? false) vSpace(10),
+                      if (viewModel.filterData?.isNotEmpty ?? false)
+                      buildRowFilterItemUI(data: viewModel.filterData! , 
+                      onDismissTap: (item) {
+                         viewModel.onDismissFilterItemHandler(
+                                      dismissItem: item);
+                      },
+                      )
+                    ],
+                  ),
+                ),
+                Expanded(
+                    flex: 1,
+                    child: ListView.builder(
+                      itemCount: viewModel.dataList.length,
+                      itemBuilder: (context, index) {
+                        final data = viewModel.dataList[index];
+                        return buildCheckBox(
+                            label: data.fieldName,
+                            value: data.isChecked,
+                            onTap: () {
+                              viewModel.onItemClickHandler(
+                                  isChecked: !data.isChecked, item: data);
+                            },
+                            midPad: 0);
+                      },
+                    )),
+              ],
+            ),
           ),
         ),
       ),

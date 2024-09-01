@@ -125,14 +125,7 @@ class InternshipsViewModel extends FormViewModel {
     });
   }
 
-  goToFilterScreen() async {
-    await _navigationService.navigateToFilterView();
-    notifyListeners();
-  }
-
-  void goToViewDetailsView() {
-    _navigationService.navigateToViewDetailView();
-  }
+  
 
   void onDismissFilterItemClick(Filter item) {
     if (item is ProfileFilter) {
@@ -201,5 +194,14 @@ class InternshipsViewModel extends FormViewModel {
       }
       return false;
     }).toList();
+  }
+
+  goToFilterScreen() async {
+    await _navigationService.navigateToFilterView();
+    notifyListeners();
+  }
+
+  void goToViewDetailsView() {
+    _navigationService.navigateToViewDetailView();
   }
 }

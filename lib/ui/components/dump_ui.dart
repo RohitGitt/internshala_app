@@ -6,6 +6,8 @@ import 'package:internshala/ui/common/ui_helpers.dart';
 import 'package:internshala/ui/components/build_text_ui.dart';
 import 'package:internshala/ui/views/filter/model/check_box_model.dart';
 import 'package:internshala/ui/views/internships/model/Internship.dart';
+import 'package:stacked/stacked_annotations.dart';
+import 'package:stacked_services/stacked_services.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 Widget buildCustomText(
@@ -349,7 +351,7 @@ Widget buildPromotionAdWidget({PromotionAdData? item, void Function()? onTap}) {
       width: double.infinity,
       height: 300,
       padding: const EdgeInsets.symmetric(
-          horizontal: primaryHorizontalScreenPadding),
+          horizontal: primaryHorizontalScreenPadding * 2),
       child: Align(
         alignment: Alignment.center,
         child: Column(
@@ -378,7 +380,7 @@ Widget buildTrainingOrCetificateAdWidget(
       width: double.infinity,
       height: 300,
       padding: const EdgeInsets.symmetric(
-          horizontal: primaryHorizontalScreenPadding),
+          horizontal: primaryHorizontalScreenPadding * 2),
       decoration: BoxDecoration(border: Border.all()),
       child: Align(
         alignment: Alignment.center,

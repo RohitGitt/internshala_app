@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:internshala/app/app.logger.dart';
+import 'package:internshala/app/app.locator.dart';
 import 'package:internshala/gen/assets.gen.dart';
 import 'package:internshala/ui/common/app_colors.dart';
 import 'package:internshala/ui/common/ui_helpers.dart';
 import 'package:internshala/ui/views/courses/courses_view.dart';
+import 'package:internshala/ui/views/filter/model/filter_state_model.dart';
 import 'package:internshala/ui/views/home/home_view.dart';
 import 'package:internshala/ui/views/internships/internships_view.dart';
 import 'package:internshala/ui/views/jobs/jobs_view.dart';
@@ -27,8 +28,7 @@ class MainView extends StackedView<MainViewModel> {
             if (viewModel.currentIndex == 1 ||
                 viewModel.currentIndex == 2 ||
                 viewModel.currentIndex == 3) {
-              getLogger("MainView").i(
-                  "onWillPop Called : index value : ${viewModel.currentIndex}");
+             
               viewModel.setIndex(0);
               return false;
             }

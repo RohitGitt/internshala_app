@@ -14,6 +14,7 @@ import 'package:stacked_services/stacked_services.dart';
 class FilterViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
   final maxDurationInMonthsKey = GlobalKey();
+  bool shouldResetFilterState = true;
 
   FilterStateModel filterStateModel = locator<FilterStateModel>();
   DateTime? get startingFromOrAfterValue => filterStateModel.startingFromDateOrAfter;
@@ -84,15 +85,21 @@ class FilterViewModel extends BaseViewModel {
   }
 
   void onApplyButtonClick() {
+    shouldResetFilterState = false;
     _navigationService.back();
   }
 
   void onClearAllButtonClick() {
-    filterStateModel.reset();
+    reset();
     notifyListeners();
   }
 
+  reset(){
+    filterStateModel.reset();
+  }
+
   void onBackButtonClick() {
+    reset();
     _navigationService.back();
   }
 

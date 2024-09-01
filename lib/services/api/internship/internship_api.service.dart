@@ -20,7 +20,7 @@ class InternshipApiService extends Api {
     // make api call to get data here.
     return PromotionAdResponseDTO(
         id: 1,
-        title: "Dummy Advertisement UI",
+        title: "Advertisement UI",
         description:
             " Promotion Ads Data will be shown here");
   }
