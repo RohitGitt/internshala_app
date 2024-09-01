@@ -39,7 +39,7 @@ Widget buildCustomText(
       child: Container(
         height: height ?? 40,
         padding:
-            EdgeInsets.symmetric(horizontal: hPad ?? 10, vertical: vPad ?? 10),
+            EdgeInsets.symmetric(horizontal: hPad ?? 10, vertical: vPad ?? 5),
         decoration: BoxDecoration(
           color: backgroundColor,
           border: borderColor != null ? Border.all(color: borderColor) : null,
@@ -78,21 +78,25 @@ Widget buildCustomText(
                   // bold: true,
                   fontWeight: FontWeight.w400,
                   fontSize: titleFontSize ?? 17),
-              hSpace(5),
+              hSpace(7),
               if (suffix != null)
-                InkWell(
-                    onTap: () {
-                      if (onSuffixIconClick != null) {
-                        onSuffixIconClick();
-                      }
-                    },
-                    child: Image.asset(
-                      suffix,
-                      width: 15,
-                      height: 10,
-                      color: suffixIconColor,
-                      fit: BoxFit.contain,
-                    ).pOnly(top: 5)),
+                Container(
+                  height: 17,
+                  width: 20,
+                  child: InkWell(
+                      onTap: () {
+                        if (onSuffixIconClick != null) {
+                          onSuffixIconClick();
+                        }
+                      },
+                      child: Image.asset(
+                        suffix,
+                        // width: 20,
+                        // height: 10,
+                        color: suffixIconColor,
+                        fit: BoxFit.contain,
+                      )),
+                ),
               if (count != null)
                 VxCircle(
                   radius: 20,

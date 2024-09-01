@@ -28,7 +28,7 @@ class MainView extends StackedView<MainViewModel> {
             if (viewModel.currentIndex == 1 ||
                 viewModel.currentIndex == 2 ||
                 viewModel.currentIndex == 3) {
-             
+                  
               viewModel.setIndex(0);
               return false;
             }
